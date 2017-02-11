@@ -24,6 +24,7 @@ for x in range(20):
 # 3 surrounding blocks will cause a dead cell to become alive
 # >= 4 surrounding blocks will kill a cell
 def step(i,j, mat, mat2):
+    sumbox = 0
     if i < 7 & j < 7:
         sumbox = mat[i - 1][j] + mat[i + 1][j] + mat[i][j - 1] + mat[i][j + 1] + mat[i - 1][j - 1] + mat[i - 1][j + 1] + \
                  mat[i + 1][j - 1] + mat[i + 1][j + 1]
