@@ -36,6 +36,13 @@ def pop_update(mat_orig,mat_up):
                     mat_up[i][j] = 1
     return mat_up
 
+def lightup(output):
+    for i in range(0,8):
+        for j in range(0,8):
+            if output[i][j]==1:
+                unicornhat.set_pixel(i, j, 255, 124, 124)
+    unicornhat.show()
+
 def simulation(generations, start_block):
     #initialize unicorn hat
     unicornhat.rotation(0)
@@ -51,12 +58,8 @@ def simulation(generations, start_block):
 
     for generation in range(generations):
         output = pop_update(matrix, matrix_update)
-        for i in range(0,8):
-            for j in range(0,8):
-                if output[i][j]==1:
-                    unicornhat.set_pixel(i, j, 255, 124, 124)
-        unicornhat.show()
+        lightup(output)        
         time.sleep(1)
         matrix = output
-
+    unicornhat.clear()
 simulation(5,25)
