@@ -61,5 +61,5 @@ def simulation(generations, start_block):
         lightup(output)        
         time.sleep(1)
         matrix = output
-    unicornhat.clear()
+        unicornhat.clear()
 simulation(5,25)
