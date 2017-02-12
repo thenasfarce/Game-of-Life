@@ -48,7 +48,7 @@ def simulation(generations, start_block):
     unicornhat.rotation(0)
     unicornhat.brightness(0.5)
 
-    matrix = numpy.zeros((8, 8), dtype=int)
+    matrix = numpy.random.randint(2, size=(8, 8))
     matrix_update = numpy.zeros((8, 8), dtype=int)
     
     for x in range(start_block):
