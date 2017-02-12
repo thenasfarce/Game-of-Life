@@ -45,16 +45,13 @@ def lightup(output):
 
 def simulation(generations, start_block):
     #initialize unicorn hat
-    unicornhat.brightness(0.3)
+    unicornhat.brightness(0.4)
 
     matrix = numpy.random.randint(2, size=(8, 8))
     matrix_update = numpy.zeros((8, 8), dtype=int)
+    lightup(matrix)
+    time.sleep(1)
     
-    for x in range(start_block):
-        row = random.randrange(0, 8, 1)
-        col = random.randrange(0, 8, 1)
-        matrix[row][col] = 1
-
     for generation in range(generations):
         output = pop_update(matrix, matrix_update)
         lightup(output)        
