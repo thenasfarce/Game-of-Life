@@ -43,19 +43,18 @@ def lightup(output):
                 unicornhat.set_pixel(i, j, 255, 124, 124)
     unicornhat.show()
 
-def simulation(generations, start_block):
+def simulation(generations):
     #initialize unicorn hat
     unicornhat.brightness(0.4)
 
     matrix = numpy.random.randint(2, size=(8, 8))
     matrix_update = numpy.zeros((8, 8), dtype=int)
-    lightup(matrix)
-    time.sleep(1)
-    
+    lightup(matrix)    
     for generation in range(generations):
-        output = pop_update(matrix, matrix_update)
-        lightup(output)        
         time.sleep(1)
-        matrix = output
         unicornhat.clear()
-simulation(50,25)
+        output = pop_update(matrix, matrix_update)
+        lightup(output)
+        matrix = output
+        
+simulation(50)
