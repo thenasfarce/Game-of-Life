@@ -45,8 +45,7 @@ def lightup(output):
 
 def simulation(generations, start_block):
     #initialize unicorn hat
-    unicornhat.rotation(0)
-    unicornhat.brightness(0.5)
+    unicornhat.brightness(0.3)
 
     matrix = numpy.random.randint(2, size=(8, 8))
     matrix_update = numpy.zeros((8, 8), dtype=int)
